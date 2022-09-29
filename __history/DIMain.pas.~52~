@@ -1,0 +1,76 @@
+unit DIMain;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask,ClassesInterfaces,
+  Vcl.ExtCtrls, Vcl.Grids;
+
+
+type
+  TMain = class(TForm)
+    TxtId: TEdit;
+    TxtDescricao: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    CboUni: TComboBox;
+    Label4: TLabel;
+    BitBtn1: TBitBtn;
+    TxtPreco: TEdit;
+    TxtQtd: TEdit;
+    Label5: TLabel;
+    Panel1: TPanel;
+    Label6: TLabel;
+    pnlgrid: TPanel;
+    procedure BitBtn1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    ClasseIp:IItensPedido;
+  end;
+
+var
+  Main: TMain;
+
+implementation
+
+{$R *.dfm}
+
+procedure TMain.BitBtn1Click(Sender: TObject);
+var
+Pedido:TPedido;
+i:integer;
+begin
+
+
+   ClasseIp.Id        :=StrToInt(TxtId.Text);
+   ClasseIp.Uni       :=CboUni.Text;
+   ClasseIp.Descricao :=TxtDescricao.Text;
+   ClasseIp.Preco     :=StrToCurr(TxtPreco.Text);
+   ClasseIp.Qtd       :=StrToCurr(TxtQtd.Text);
+
+   Pedido:=TPedido.Create(ClasseIp);
+   Pedido.IncluirProduto;
+   Pedido.listar.Parent:=pnlgrid;
+
+
+
+end;
+
+procedure TMain.FormShow(Sender: TObject);
+begin
+
+//Aqui é criada a instância semelhante ao addSingleton do ASP.net
+//É excluída quando a aplicação somente com o fim da aplicação
+ ClasseIp := TItensPedido.Create as IItensPedido;
+ ClasseIp.CarregarLista;
+
+
+
+end;
+
+end.

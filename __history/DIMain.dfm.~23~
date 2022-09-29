@@ -1,0 +1,146 @@
+object Main: TMain
+  Left = 0
+  Top = 0
+  BorderStyle = bsDialog
+  ClientHeight = 555
+  ClientWidth = 536
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 48
+    Top = 112
+    Width = 14
+    Height = 13
+    Caption = 'Id:'
+  end
+  object Label2: TLabel
+    Left = 48
+    Top = 158
+    Width = 50
+    Height = 13
+    Caption = 'Descri'#231#227'o:'
+  end
+  object Label3: TLabel
+    Left = 136
+    Top = 112
+    Width = 22
+    Height = 13
+    Caption = 'UNI:'
+  end
+  object Label4: TLabel
+    Left = 48
+    Top = 204
+    Width = 31
+    Height = 13
+    Caption = 'Pre'#231'o:'
+  end
+  object Label5: TLabel
+    Left = 200
+    Top = 204
+    Width = 22
+    Height = 13
+    Caption = 'Qtd:'
+  end
+  object TxtId: TEdit
+    Left = 48
+    Top = 131
+    Width = 73
+    Height = 21
+    Enabled = False
+    TabOrder = 0
+    Text = '1'
+  end
+  object TxtDescricao: TEdit
+    Left = 48
+    Top = 177
+    Width = 368
+    Height = 21
+    TabOrder = 1
+    Text = 'REFRIGERANTE PEPSI-COLA 2L'
+  end
+  object CboUni: TComboBox
+    Left = 136
+    Top = 131
+    Width = 65
+    Height = 21
+    ItemIndex = 2
+    TabOrder = 2
+    Text = 'LT'
+    Items.Strings = (
+      'UNI'
+      'CX'
+      'LT')
+  end
+  object BitBtn1: TBitBtn
+    Left = 327
+    Top = 217
+    Width = 89
+    Height = 33
+    Caption = 'Incluir'
+    TabOrder = 3
+    OnClick = BitBtn1Click
+  end
+  object TxtPreco: TEdit
+    Left = 48
+    Top = 223
+    Width = 121
+    Height = 21
+    TabOrder = 4
+    Text = '0.00'
+  end
+  object TxtQtd: TEdit
+    Left = 200
+    Top = 223
+    Width = 121
+    Height = 21
+    TabOrder = 5
+    Text = '1.00'
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 536
+    Height = 106
+    Align = alTop
+    Caption = 'EXEMPLO DE INJE'#199#195'O DE DEPEND'#202'NCIA'
+    Color = clMedGray
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 6
+    ExplicitWidth = 526
+    object Label6: TLabel
+      Left = 141
+      Top = 72
+      Width = 216
+      Height = 16
+      Caption = 'LAN'#199'AMENTO DE ITENS NO PEDIDO'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+  end
+  object pnlgrid: TPanel
+    Left = 0
+    Top = 256
+    Width = 536
+    Height = 299
+    Align = alBottom
+    TabOrder = 7
+  end
+end
